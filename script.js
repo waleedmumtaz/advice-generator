@@ -5,13 +5,17 @@ const diceEl = document.getElementsByClassName('dice-container')[0]
 const apiUrl = 'https://api.adviceslip.com/advice'
 
 const fetchAdvice = async () => {
-  const response = await fetch(apiUrl)
-  const data = await response.json()
+  try {
+    const response = await fetch(apiUrl)
+    const data = await response.json()
 
-  let adviceId = data.slip.id
-  let adviceText = data.slip.advice
+    let adviceId = data.slip.id
+    let adviceText = data.slip.advice
 
-  adviceIdEl.innerHTML = `Advice #${adviceId}`
-  adviceTextEl.innerHTML = `"${adviceText}"`
+    adviceIdEl.innerHTML = `Advice #${adviceId}`
+    adviceTextEl.innerHTML = `"${adviceText}"`
+  } catch (error) {
+    console.error(error)
+  }
 }
 fetchAdvice()
