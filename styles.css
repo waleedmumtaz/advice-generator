@@ -59,6 +59,10 @@ body {
   padding-block-end: 3rem;
 }
 
+.pattern img {
+  width: 100%;
+}
+
 .dice-container {
   display: flex;
   justify-content: center;

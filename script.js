@@ -11,14 +11,7 @@ const fetchAdvice = async () => {
   let adviceId = data.slip.id
   let adviceText = data.slip.advice
 
-  adviceIdEl.append(adviceId)
-  adviceTextEl.innerHTML = adviceText
+  adviceIdEl.innerHTML = `Advice #${adviceId}`
+  adviceTextEl.innerHTML = `"${adviceText}"`
 }
 fetchAdvice()
-
-diceEl.addEventListener('click', () => {
-  adviceIdEl.innerHTML = 'Advice #'
-  adviceTextEl.innerHTML = ''
-
-  fetchAdvice()
-})
