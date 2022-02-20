@@ -3,8 +3,10 @@
 :root {
   --color-primary-light-cyan: hsl(193, 38%, 86%);
   --color-primary-neon-green: hsl(150, 100%, 66%);
+  --color-primary-neon-green-shadow: hsla(150, 100%, 66%, 0.5);
   --color-neutral-grayish-blue: hsl(217, 19%, 38%);
   --color-neutral-dark-grayish-blue: hsl(217, 19%, 24%);
+  --color-background: #1f2531;
 }
 
 * {
@@ -16,12 +18,77 @@
 body {
   font-family: 'Manrope', sans-serif;
   font-size: 28px;
+  background-color: var(--color-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-inline: 1rem;
+}
+
+.advice-container {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--color-neutral-dark-grayish-blue);
+  border-radius: 1rem;
+  max-width: 30rem;
+}
+
+.advice-id {
+  color: var(--color-primary-neon-green);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-align: center;
+  letter-spacing: 0.25rem;
+}
+
+.advice-text {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-block-start: 1rem;
+}
+
+.pattern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block-start: 2rem;
+  padding-block-end: 3rem;
+}
+
+.dice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice-img-container {
+  position: absolute;
+  bottom: -25px;
+  display: inline-flex;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-neon-green);
+  border: none;
+  cursor: pointer;
+}
+
+.dice-img-container:hover {
+  box-shadow: 0 0 24px 10px var(--color-primary-neon-green-shadow);
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: white;
+  margin-block-start: 10rem;
+  position: absolute;
+  bottom: 1rem;
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--color-primary-neon-green);
 }
